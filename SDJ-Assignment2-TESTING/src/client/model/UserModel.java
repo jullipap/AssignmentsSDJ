@@ -7,7 +7,7 @@ import java.beans.PropertyChangeListener;
 
 public interface UserModel extends Subject
 {
-  ChatMessages broadcast(String msg, String username);
+  ChatMessages sendMessage(String msg, String username);
 
   void addListener(String name, PropertyChangeListener listener);
 

@@ -17,7 +17,7 @@ public class UserModelManager implements UserModel
 
   //Probably not even needed
   @Override
-  public ChatMessages broadcast(String msg, String username)
+  public ChatMessages sendMessage(String msg, String username)
   {
     return new ChatMessages(msg, username);
   }

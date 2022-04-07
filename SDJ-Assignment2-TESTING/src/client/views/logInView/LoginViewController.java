@@ -1,7 +1,6 @@
 package client.views.logInView;
 
 import client.core.ViewHandler;
-import client.views.chatAppView.ChatViewController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

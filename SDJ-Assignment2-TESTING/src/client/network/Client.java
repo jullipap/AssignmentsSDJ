@@ -7,8 +7,9 @@ import java.beans.PropertyChangeListener;
 
 public interface Client extends Subject
 {
-  ChatMessages broadcast(String msg, String username);
-  void setMessages(ChatMessages messages);
+  void sendMessages(ChatMessages messages);
 
   void addListener(String name, PropertyChangeListener listener);
+
+  void startClient();
 }

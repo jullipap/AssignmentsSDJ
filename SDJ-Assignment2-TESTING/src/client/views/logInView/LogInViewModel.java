@@ -4,8 +4,6 @@ import client.model.UserModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import java.beans.PropertyChangeEvent;
-
 public class LogInViewModel
 {
   private StringProperty username;

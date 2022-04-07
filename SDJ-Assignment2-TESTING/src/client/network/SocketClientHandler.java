@@ -43,13 +43,21 @@ public class SocketClientHandler implements Runnable
       }
 
     }
-    catch (IOException e)
-    {
-      e.printStackTrace();
-    }
-    catch (ClassNotFoundException e)
+    catch (IOException | ClassNotFoundException e)
     {
       e.printStackTrace();
     }
   }
-}
+    public void sendMessageToServer (ChatMessages msg)
+      {
+        try
+        {
+          out.writeObject(msg);
+          System.out.println(msg.toString());
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
+      }
+    }

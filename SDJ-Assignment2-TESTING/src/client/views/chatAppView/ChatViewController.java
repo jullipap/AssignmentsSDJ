@@ -1,8 +1,7 @@
 package client.views.chatAppView;
 
 import client.core.ViewHandler;
-import client.views.logInView.LogInViewModel;
-import client.views.logInView.LoginViewController;
+import client.network.SocketClient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -15,17 +14,17 @@ public class ChatViewController
   @FXML
   private TextArea messageSendField;
 
-
   private ViewHandler viewHandler;
   private ChatViewModel chatViewModel;
-
-
+  private SocketClient client;
+  
+  //TODO Implement client interface, which send mess to server to get message/user
 
   @FXML
   void sendMessage(ActionEvent event) {
     ChatMessages message = new ChatMessages(messageSendField.getText(), viewHandler.getUsername());
-    System.out.println(message.toString());
-    messageBox.appendText(message.toString() + "\n");
+    messageSendField.setText("");
+    client.sendMessages(message);
   }
 
   public void init(ViewHandler viewHandler, ChatViewModel chatViewModel){

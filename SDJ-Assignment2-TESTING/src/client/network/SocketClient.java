@@ -18,12 +18,12 @@ public class SocketClient implements Client
 
   private String username;
   private SocketClientHandler socketClientHandler;
+  private ArrayList<ChatMessages> allMessages = new ArrayList<>();
+  private ChatViewController chatViewController;
+  private LoginViewController loginViewController;
 
-  public SocketClient(){
-    support = new PropertyChangeSupport(this);
-  }
-
-  public void startClient(){
+  public void startClient()
+  {
     try
     {
       Socket socket = new Socket(IP, PORT);
@@ -39,12 +39,6 @@ public class SocketClient implements Client
     {
       e.printStackTrace();
     }
-  }
-
-  @Override
-  public ChatMessages broadcast(String msg, String username)
-  {
-    return new ChatMessages(msg, username);
   }
 
   @Override
